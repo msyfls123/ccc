@@ -1,1 +1,4 @@
 build/
+script/*.js
+script/*.wasm
+script/*.txt

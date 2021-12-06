@@ -3,7 +3,7 @@ project(ccc VERSION 0.1.0)
 
 include(CTest)
 enable_testing()
-file(GLOB SOURCES *.cpp)
+file(GLOB SOURCES src/*.cpp)
 add_executable(ccc ${SOURCES})
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
