@@ -1,0 +1,38 @@
+name: Build
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Git Repo
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16.7.0"
+
+      - name: Setup Emscripten toolchain
+        uses: mymindstorm/setup-emsdk@v11
+        with:
+          # Make sure to set a version number!
+          version: 3.0.0
+          # This is the name of the cache folder.
+          # The cache folder will be placed in the build directory,
+          #  so make sure it doesn't conflict with anything!
+          actions-cache-folder: 'emsdk-cache'
+
+      - name: Run
+        run: |
+          sh ./script/emcc_file.sh
+          cat script/example.txt
+
+      - name: Archive debug artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: bundle
+          path: |
+            script/file.wasm
+            script/file.js
