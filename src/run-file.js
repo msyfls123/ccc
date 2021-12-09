@@ -1,9 +1,13 @@
-const run = require('../script/file.js')
+const path = require('path')
+
+const distDir = path.join(__dirname, '../dist')
+
+const run = require('../dist/file.js')
 
 const Mod = {
   preInit: () => {
     Mod.FS.mkdir('/working')
-    Mod.FS.mount(Mod.NODEFS, { root: './script' }, '/working');
+    Mod.FS.mount(Mod.NODEFS, { root: distDir }, '/working');
   },
 }
 
