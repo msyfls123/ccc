@@ -27,7 +27,7 @@ jobs:
       - name: Run
         run: |
           sh ./script/emcc_file.sh
-          cat script/example.txt
+          cat dist/example.txt
 
       - name: Archive debug artifacts
         uses: actions/upload-artifact@v2
