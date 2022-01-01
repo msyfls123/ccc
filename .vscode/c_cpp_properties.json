@@ -20,7 +20,8 @@
         {
             "name": "Darwin",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "/Users/kimima/Git/emsdk/upstream/emscripten/system/include/"
             ],
             "defines": [],
             "macFrameworkPath": [
@@ -28,7 +29,7 @@
             ],
             "compilerPath": "/usr/bin/g++",
             "cStandard": "c17",
-            "cppStandard": "c++98",
+            "cppStandard": "c++17",
             "intelliSenseMode": "macos-clang-x64"
         }
     ],
